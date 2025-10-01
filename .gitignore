@@ -1,0 +1,10 @@
+# Visual Studio
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# Revit build debris (if any)
+*.cache
+*.tmp
