@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="ABMEP.Work.Views.SpoolPane"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             MinWidth="350" MinHeight="420"
+             Background="White">
+    <Border Padding="12" Background="White" BorderBrush="#CCC" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header: logo left, gear right -->
+            <Border Grid.Row="0" BorderBrush="#DDD" BorderThickness="0,0,0,1" Padding="0,0,0,8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image x:Name="imgLogo"
+                 Height="40"
+                 Stretch="Uniform"
+                 SnapsToDevicePixels="True"
+                 RenderOptions.BitmapScalingMode="HighQuality"
+                 HorizontalAlignment="Left"/>
+
+                    <Button Grid.Column="1"
+                  x:Name="btnOpenSettings"
+                  ToolTip="Settings"
+                  Width="34" Height="34"
+                  Margin="8,0,0,0"
+                  VerticalAlignment="Center"
+                  Click="btnOpenSettings_Click">
+                        <TextBlock Text="&#xE713;" FontFamily="Segoe MDL2 Assets" FontSize="18"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <!-- Body -->
+            <Grid Grid.Row="1" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Only Refresh + Clear -->
+                <WrapPanel Margin="0,8,0,8" ItemHeight="26" ItemWidth="Auto" HorizontalAlignment="Left">
+                    <Button x:Name="btnRefreshAssemblies" Content="Refresh List" Margin="0,0,8,8" MinWidth="110"/>
+                    <Button x:Name="btnClearSel"  Content="Clear" Margin="0,0,8,8" MinWidth="80"/>
+                </WrapPanel>
+
+                <DataGrid x:Name="gridAssemblies" Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  HeadersVisibility="Column"
+                  GridLinesVisibility="Horizontal"
+                  BorderBrush="#CCC" BorderThickness="1"
+                  Background="White" Foreground="Black"
+                  HorizontalScrollBarVisibility="Disabled">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="40">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <CheckBox ToolTip="Select/Deselect all" Click="HeaderSelectAll_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Assembly Name" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="Left" Margin="0,8,0,0">
+                    <Button x:Name="btnCreate"  Content="Create Spool Sheets"  Margin="0,0,8,8" MinWidth="160"/>
+                    <Button x:Name="btnRefresh" Content="Refresh Spool Sheets" Margin="0,0,0,8" MinWidth="160"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

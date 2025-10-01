@@ -1,0 +1,12 @@
+C:\ABMEP\ABMEP.Work\ABMEP.Work\bin\x64\Release\ABMEP.Work.dll
+C:\ABMEP\ABMEP.Work\ABMEP.Work\bin\x64\Release\ABMEP.Work.pdb
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\ABMEP.Work.csproj.AssemblyReference.cache
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\ABMEP.Work.csproj.CoreCompileInputs.cache
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\ABMEP.Work.dll
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\ABMEP.Work.pdb
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\Views\SpoolPane.baml
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\Views\SpoolPane.g.cs
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\ABMEP.Work_MarkupCompile.cache
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\ABMEP.Work.g.resources
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\Views\AssemblySettingsWindow.baml
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\x64\Release\Views\AssemblySettingsWindow.g.cs

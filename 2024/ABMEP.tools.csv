@@ -1,0 +1,11 @@
+Spooling,Assembly Manager,ABMEP.Tools.dll,ABMEP.Tools.SpoolPaneLauncher,Spool16.png,Spool32.png
+Shop Drawings,Sleeve Dimensions,ABMEP.Tools.dll,ABMEP.Tools.DimensionsToSleevesLauncher,Sleeve16.png,Sleeve32.png
+Trimble,Pipe Trimble/n Testing,ABMEP.Tools.dll,ABMEP.Tools.PipeTrimbleLauncher,PipeTrimble16.png,PipeTrimble32.png
+Trimble,Sleeve Trimble,ABMEP.Tools.dll,ABMEP.Tools.SleevesTrimbleCommandLauncher,Sleeve16.png,Sleeve32.png
+Trimble,Hanger Trimble,ABMEP.Tools.dll,ABMEP.Tools.HangersTrimbleCommandLauncher,Hanger16.png,Hanger32.png
+Reports,Hanger Inserts,ABMEP.Tools.dll,ABMEP.Tools.HangerInsertsCommandLauncher,HangerInserts16.png,HangerInserts32.png
+Parameter Sync,Hanger Size,ABMEP.Tools.dll,ABMEP.Tools.HangerSizeFromProductEntryLauncher,Refresh16.png,Refresh32.png,small,SyncA
+Parameter Sync,Strut Length,ABMEP.Tools.dll,ABMEP.Tools.StrutLengthFromWidthLauncher,Refresh16.png,Refresh32.png,small,SyncA
+Parameter Sync,Rod Length,ABMEP.Tools.dll,ABMEP.Tools.RodLengthFromEMLengthsLauncher,Refresh16.png,Refresh32.png,small,SyncA
+Inspiration,"Daily Verse","ABMEP.Tools.dll","ABMEP.Tools.RandomVerseCommandLauncher","Bible16.png","Bible32.png"
+Testing,"Test","ABMEP.Tools.dll","ABMEP.Tools.TestLauncher","TestButton16.png","TestButton32.png"

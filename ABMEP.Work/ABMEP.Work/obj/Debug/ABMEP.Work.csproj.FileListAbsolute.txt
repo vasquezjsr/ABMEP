@@ -1,0 +1,6 @@
+C:\ABMEP\ABMEP.Work\ABMEP.Work\bin\Debug\ABMEP.Work.dll
+C:\ABMEP\ABMEP.Work\ABMEP.Work\bin\Debug\ABMEP.Work.pdb
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\Debug\ABMEP.Work.csproj.AssemblyReference.cache
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\Debug\ABMEP.Work.csproj.CoreCompileInputs.cache
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\Debug\ABMEP.Work.dll
+C:\ABMEP\ABMEP.Work\ABMEP.Work\obj\Debug\ABMEP.Work.pdb

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <!-- Main ABMEP loader (leave as-is) -->
+  <AddIn Type="Application">
+    <Name>ABMEP</Name>
+    <Assembly>C:\Users\JoeVasquez\AppData\Roaming\Autodesk\Revit\Addins\2024\ABMEP.dll</Assembly>
+    <AddInId>8D83EA15-B739-4ACD-A9E8-611A085683A1</AddInId>
+    <FullClassName>ABMEP.App</FullClassName>
+    <VendorId>ABMEP</VendorId>
+    <VendorDescription>ABMEP Ribbon Loader</VendorDescription>
+  </AddIn>
+
+  <!-- NEW: registers the dockable pane -->
+  <AddIn Type="Application">
+    <Name>ABMEP Pane Registration</Name>
+    <Assembly>C:\Users\JoeVasquez\AppData\Roaming\Autodesk\Revit\Addins\2024\ABMEP.Tools.dll</Assembly>
+    <AddInId>5E9D1A29-6C0A-4B4E-9C2A-7A4E1B3D9E52</AddInId>
+    <FullClassName>ABMEP.Tools.AppDockable</FullClassName>
+    <VendorId>ABMEP</VendorId>
+    <VendorDescription>Registers dockable pane host</VendorDescription>
+  </AddIn>
+</RevitAddIns>

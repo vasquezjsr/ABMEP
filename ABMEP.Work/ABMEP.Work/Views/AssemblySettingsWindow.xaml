@@ -1,0 +1,230 @@
+﻿<Window x:Class="ABMEP.Work.Views.AssemblySettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Assembly Settings"
+        Height="620" Width="900"
+        MinHeight="560" MinWidth="780"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterOwner"
+        Background="#FFF7F7F7"
+        ShowInTaskbar="False">
+
+    <!-- ===== Theme resources ===== -->
+    <Window.Resources>
+        <!-- Frame + bevel colors -->
+        <SolidColorBrush x:Key="FrameBrush" Color="#444444"/>
+        <!-- replaces red -->
+        <SolidColorBrush x:Key="HighlightBrush" Color="#FFFFFF"/>
+        <!-- top/left bevel -->
+        <SolidColorBrush x:Key="ShadowBrush"    Color="#A8A8A8"/>
+        <!-- bottom/right bevel -->
+
+        <!-- Light gray inset panel gradient (darker edges -> lighter center) -->
+        <RadialGradientBrush x:Key="PanelGradient"
+                         Center="0.5,0.5" GradientOrigin="0.5,0.5"
+                         RadiusX="0.95" RadiusY="0.95">
+            <!-- center (lightest) -->
+            <GradientStop Color="#FFFDFDFD" Offset="0.0"/>
+            <!-- mid tone -->
+            <GradientStop Color="#FFEEEEEE" Offset="0.65"/>
+            <!-- edge (darkest) -->
+            <GradientStop Color="#FFE2E2E2" Offset="1.0"/>
+        </RadialGradientBrush>
+
+        <!-- Inset (indented) panel with dark outer frame + bevel + gradient fill -->
+        <Style x:Key="InsetGroup" TargetType="ContentControl">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="{StaticResource PanelGradient}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <Grid>
+                            <!-- outer dark frame -->
+                            <Border BorderBrush="{StaticResource FrameBrush}"
+                      BorderThickness="1" CornerRadius="3"
+                      Background="{StaticResource PanelGradient}"/>
+
+                            <!-- bevel: top/left light -->
+                            <Border Margin="1"
+                      BorderThickness="1,1,0,0"
+                      BorderBrush="{StaticResource HighlightBrush}"
+                      CornerRadius="3"
+                      Background="Transparent"/>
+
+                            <!-- bevel: bottom/right shadow -->
+                            <Border Margin="1"
+                      BorderThickness="0,0,1,1"
+                      BorderBrush="{StaticResource ShadowBrush}"
+                      CornerRadius="3"
+                      Background="Transparent"/>
+
+                            <!-- content area -->
+                            <Border Margin="4" CornerRadius="3"
+                      Background="{TemplateBinding Background}"
+                      Padding="{TemplateBinding Padding}">
+                                <ContentPresenter/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <!-- Outer window frame -->
+        <Border BorderBrush="{StaticResource FrameBrush}" BorderThickness="1" Padding="10" Margin="6" CornerRadius="4">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Header w/ Logo -->
+                <Grid Grid.Row="0" Margin="0 0 0 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="130"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="imgLogo"
+                 Grid.Column="1"
+                 Width="120" Height="48"
+                 Stretch="Uniform"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"/>
+                </Grid>
+
+                <!-- Top pickers (INSET with gradient) -->
+                <ContentControl Grid.Row="1" Style="{StaticResource InsetGroup}" Margin="0 0 0 10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Title Block" VerticalAlignment="Center" Margin="0,2,12,2"/>
+                        <ComboBox x:Name="cmbTitleBlock" Grid.Row="0" Grid.Column="1" Height="26" Margin="0,2,0,2"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Tag Type" VerticalAlignment="Center" Margin="0,2,12,2"/>
+                        <ComboBox x:Name="cmbTagType" Grid.Row="1" Grid.Column="1" Height="26" Margin="0,2,0,2"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Viewport Type" VerticalAlignment="Center" Margin="0,2,12,2"/>
+                        <ComboBox x:Name="cmbViewportType" Grid.Row="2" Grid.Column="1" Height="26" Margin="0,2,0,2"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Schedule" VerticalAlignment="Center" Margin="0,2,12,2"/>
+                        <ComboBox x:Name="cmbScheduleTemplate" Grid.Row="3" Grid.Column="1" Height="26" Margin="0,2,0,2"/>
+                    </Grid>
+                </ContentControl>
+
+                <!-- Views group (INSET with gradient) -->
+                <ContentControl Grid.Row="2" Style="{StaticResource InsetGroup}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Column headers -->
+                        <Grid Grid.Row="0" Margin="0 0 0 8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="220"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="2" Text="Direction" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="3" Text="Tag Y/N" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="4" Text="Placement" HorizontalAlignment="Center" FontWeight="Bold"/>
+                        </Grid>
+
+                        <!-- Rows -->
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="220"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- 3D Ortho -->
+                            <CheckBox x:Name="chk3D" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="8,4"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="3D Ortho" VerticalAlignment="Center" Margin="0,4"/>
+                            <ComboBox x:Name="cmb3DDirection" Grid.Row="0" Grid.Column="2" Height="24" Margin="4">
+                                <ComboBoxItem Content="NE"/>
+                                <ComboBoxItem Content="NW"/>
+                                <ComboBoxItem Content="SE"/>
+                                <ComboBoxItem Content="SW"/>
+                                <ComboBoxItem Content="N"/>
+                                <ComboBoxItem Content="S"/>
+                                <ComboBoxItem Content="E"/>
+                                <ComboBoxItem Content="W"/>
+                                <ComboBoxItem Content="ISO"/>
+                            </ComboBox>
+                            <CheckBox x:Name="chk3DTag" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ComboBox x:Name="cmb3DPlace" Grid.Row="0" Grid.Column="4" Height="24" Margin="4"/>
+
+                            <!-- Back -->
+                            <CheckBox x:Name="chkBack" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="8,4"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="Back View" VerticalAlignment="Center" Margin="0,4"/>
+                            <TextBlock Grid.Row="1" Grid.Column="2"/>
+                            <CheckBox x:Name="chkBackTag" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ComboBox x:Name="cmbBackPlace" Grid.Row="1" Grid.Column="4" Height="24" Margin="4"/>
+
+                            <!-- Front -->
+                            <CheckBox x:Name="chkFront" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="8,4"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="Front View" VerticalAlignment="Center" Margin="0,4"/>
+                            <TextBlock Grid.Row="2" Grid.Column="2"/>
+                            <CheckBox x:Name="chkFrontTag" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ComboBox x:Name="cmbFrontPlace" Grid.Row="2" Grid.Column="4" Height="24" Margin="4"/>
+
+                            <!-- Left -->
+                            <CheckBox x:Name="chkLeft" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="8,4"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Text="Left View" VerticalAlignment="Center" Margin="0,4"/>
+                            <TextBlock Grid.Row="3" Grid.Column="2"/>
+                            <CheckBox x:Name="chkLeftTag" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ComboBox x:Name="cmbLeftPlace" Grid.Row="3" Grid.Column="4" Height="24" Margin="4"/>
+
+                            <!-- Right -->
+                            <CheckBox x:Name="chkRight" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Margin="8,4"/>
+                            <TextBlock Grid.Row="4" Grid.Column="1" Text="Right View" VerticalAlignment="Center" Margin="0,4"/>
+                            <TextBlock Grid.Row="4" Grid.Column="2"/>
+                            <CheckBox x:Name="chkRightTag" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ComboBox x:Name="cmbRightPlace" Grid.Row="4" Grid.Column="4" Height="24" Margin="4"/>
+
+                            <!-- Top -->
+                            <CheckBox x:Name="chkTop" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Margin="8,4"/>
+                            <TextBlock Grid.Row="5" Grid.Column="1" Text="Top View" VerticalAlignment="Center" Margin="0,4"/>
+                            <TextBlock Grid.Row="5" Grid.Column="2"/>
+                            <CheckBox x:Name="chkTopTag" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ComboBox x:Name="cmbTopPlace" Grid.Row="5" Grid.Column="4" Height="24" Margin="4"/>
+                        </Grid>
+                    </Grid>
+                </ContentControl>
+
+                <!-- Footer -->
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Button x:Name="btnSave" Content="Save Settings" Width="160" Height="30" Margin="8" Click="btnSave_Click"/>
+                    <Button x:Name="btnCancel" Content="Cancel" Width="120" Height="30" Margin="8" Click="btnCancel_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </ScrollViewer>
+</Window>
