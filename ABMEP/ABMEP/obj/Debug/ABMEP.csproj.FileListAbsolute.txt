@@ -1,0 +1,2 @@
+C:\ABMEP\ABMEP\ABMEP\obj\Debug\ABMEP.csproj.AssemblyReference.cache
+C:\ABMEP\ABMEP\ABMEP\obj\Debug\ABMEP.csproj.CoreCompileInputs.cache

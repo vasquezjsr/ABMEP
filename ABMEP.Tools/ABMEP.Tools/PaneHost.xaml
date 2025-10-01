@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="ABMEP.Tools.PaneHost"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             MinWidth="260" MinHeight="200">
+    <Grid Margin="6">
+        <!-- This is the placeholder frame we swap hotloaded UI into -->
+        <ContentControl x:Name="PART_Content"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,6 @@
+C:\ABMEP\ABMEP\ABMEP\bin\x64\Release\ABMEP.dll
+C:\ABMEP\ABMEP\ABMEP\bin\x64\Release\ABMEP.pdb
+C:\ABMEP\ABMEP\ABMEP\obj\x64\Release\ABMEP.csproj.AssemblyReference.cache
+C:\ABMEP\ABMEP\ABMEP\obj\x64\Release\ABMEP.csproj.CoreCompileInputs.cache
+C:\ABMEP\ABMEP\ABMEP\obj\x64\Release\ABMEP.dll
+C:\ABMEP\ABMEP\ABMEP\obj\x64\Release\ABMEP.pdb

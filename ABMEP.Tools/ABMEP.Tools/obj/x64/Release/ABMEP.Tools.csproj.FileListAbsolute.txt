@@ -1,0 +1,10 @@
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\bin\x64\Release\ABMEP.Tools.dll
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\bin\x64\Release\ABMEP.Tools.pdb
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\obj\x64\Release\ABMEP.Tools.csproj.AssemblyReference.cache
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\obj\x64\Release\ABMEP.Tools.csproj.CoreCompileInputs.cache
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\obj\x64\Release\ABMEP.Tools.dll
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\obj\x64\Release\ABMEP.Tools.pdb
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\obj\x64\Release\PaneHost.g.cs
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\obj\x64\Release\ABMEP.Tools_MarkupCompile.cache
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\obj\x64\Release\PaneHost.baml
+C:\ABMEP\ABMEP.Tools\ABMEP.Tools\obj\x64\Release\ABMEP.Tools.g.resources
